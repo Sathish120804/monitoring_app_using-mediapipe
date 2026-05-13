@@ -112,13 +112,7 @@ class _DashboardState extends State<Dashboard> {
 
     await Permission.notification.request();
 
-    // TEST NOTIFICATION
-
-    await showNotification(
-      "Healthcare App Started",
-    );
-
-    // Start Fetching
+    // START FETCHING
 
     startFetching();
   }
@@ -308,6 +302,9 @@ class _DashboardState extends State<Dashboard> {
 
     switch (action) {
 
+      case "CAMERA_CONNECTED":
+        return 0;
+
       case "FOOD":
         return 1;
 
@@ -332,6 +329,9 @@ class _DashboardState extends State<Dashboard> {
   String getMessage(String action) {
 
     switch (action) {
+
+      case "CAMERA_CONNECTED":
+        return "📷 DroidCam Connected";
 
       case "FOOD":
         return "Food Request 🍽";
@@ -551,8 +551,8 @@ class _DashboardState extends State<Dashboard> {
 
                 card(
                   0,
-                  "REST",
-                  Icons.hotel,
+                  "CONNECTED",
+                  Icons.videocam,
                   Colors.grey,
                 ),
 
